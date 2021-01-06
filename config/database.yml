@@ -1,0 +1,18 @@
+default: &default
+  adapter: sqlserver
+  host: "<%= ENV.fetch('DATABASE_HOST', 'localhost') %>"
+  username: "<%= ENV.fetch('DATABASE_USER', 'kobold') %>"
+  password: "<%= ENV.fetch('DATABASE_PASS', '') %>"
+  collation: Latin1_General_100_CI_AI_SC
+
+development:
+  <<: *default
+  database: "<%= ENV.fetch('DATABASE_NAME', 'kobold') %>_devel"
+
+test:
+  <<: *default
+  database: "<%= ENV.fetch('DATABASE_NAME', 'kobold') %>_test"
+
+production:
+  <<: *default
+  database: "<%= ENV.fetch('DATABASE_NAME', 'kobold') %>"
