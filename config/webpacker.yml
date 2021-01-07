@@ -1,0 +1,16 @@
+default: &default
+  extensions:
+    - .js
+    - .ts
+  static_assets_extensions:
+    - .woff
+    - .woff2
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default

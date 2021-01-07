@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+require 'bundler/setup'
+require 'webpacker'
+
+ENV['RAILS_ENV'] ||= 'development'
+ENV['NODE_ENV'] = ENV['RAILS_ENV']
+
+puts 
+
+APP_ROOT = File.expand_path('..', __dir__)
+Dir.chdir(APP_ROOT) do
+  if File.basename($0) == 'webpack-dev-server'
+    require 'webpacker/dev_server_runner'
+    Webpacker::DevServerRunner.run(ARGV)
+  else
+    require 'webpacker/webpack_runner'
+    Webpacker::WebpackRunner.run(ARGV)
+  end
+end

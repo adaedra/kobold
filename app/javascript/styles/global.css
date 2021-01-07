@@ -1,0 +1,22 @@
+@import url(~@ibm/plex/css/ibm-plex.css);
+
+html {
+    --kobold-color-main: #123456;
+    --kobold-color-secondary: #456789;
+    --kobold-color-background: #232529;
+    --kobold-color-foreground: #e0e0e0;
+
+    padding: 0;
+    margin: 0;
+
+    font-family: 'IBM Plex', sans-serif;
+    font-size: 13pt;
+
+    background-color: var(--kobold-color-background);
+    color: var(--kobold-color-foreground);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
